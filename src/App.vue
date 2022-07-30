@@ -1,47 +1,59 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+<template >
+  <n-config-provider>
+    <n-loading-bar-provider>
+      <n-message-provider>
+        <n-notification-provider>
+          <n-dialog-provider>
+            <div class="wrapper">
+				<HelloWorld msg="the Vue3 + Naive-ui  test WSS!" />				
+			</div>	
+			<div class="wrapper">
+				<Login />
+			</div>	
+			<div class="wrapper">
+				<Calendar />
+			</div>	
+			<div class="wrapper">
+				<Table />
+			</div>
+			<div class="wrapper">
+				<Calendar_n />
+			</div>			
+          </n-dialog-provider>
+        </n-notification-provider>
+      </n-message-provider>
+    </n-loading-bar-provider>
+  </n-config-provider>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login.vue'
+import Calendar from './components/Calendar.vue'
+import Calendar_n from './components/Calendar_n.vue'
+import Table from './components/Table.vue'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+ 
+export default {
+  name: 'App',
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+  components: {
+   HelloWorld,
+   Login,
+   Calendar,
+   Calendar_n,
+   Table
+  
+   
+  
+  },
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
+
+
+
